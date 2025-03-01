@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        - TURBO_CACHE_DIR=/root/.cache/turbo
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - turbo-cache:/root/.cache/turbo
+    command: ["pnpm", "turbo", "run", "dev", "--filter=web"]
+    depends_on:
+      - docs
+
+  docs:
+    build:
+      context: .
+      dockerfile: apps/docs/Dockerfile
+      args:
+        - TURBO_CACHE_DIR=/root/.cache/turbo
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - turbo-cache:/root/.cache/turbo
+    command: ["pnpm", "turbo", "run", "dev", "--filter=docs"]
+
+volumes:
+  turbo-cache:
+  node_modules:
