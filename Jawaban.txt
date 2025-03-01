@@ -1,0 +1,32 @@
+1. a. Cloud Service : - Auto-scaling Groups untuk menangani lonjakan trafik.
+                      - Load Balancers untuk distribusi trafik.
+                      - Managed Databases (AWS RDS) untuk pengelolaan database yang lebih efisien.
+                      - Object Storage (AWS S3) untuk menyimpan media (gambar, video).
+                      - Cloud CDN (Cloudflare).
+                      - Cloud Monitoring dan Logging (AWS CloudWatch)/Grafana dan Prometheus.
+    
+    b. Teknologi yang Digunakan Agar Website Lancar: - PostgreSQL atau MySQL (untuk database).
+                                                     - Redis (untuk caching).
+                                                     - Kubernetes/Docker (untuk container).
+                                                     - Load Balancer (untuk pembagian traffic).
+                                                     - AWS CloudFront (untuk CDN).
+
+    c. Keamanan: - HTTPS/SSL (untuk enksripsi data).
+                 - Web Application Firewall (untuk melindungi secara umum).
+                 - Batasi hak akses setiap role yang dibikin.
+                 - Tutup port yang tidak terpakai.
+                 - DDos protection dengan 3rd-party Cloudflare
+
+    d. Monitoring: - Prometheus untuk pemantauan metrik.
+                   - Grafana untuk visualisasi metrik.
+
+    e. Menggunakan IaC dengan Terraform, karena untuk jangka panjang dan lebih mudah untuk mengontrolnya.
+
+2. Implementasi CI/CD dengan tools seperti Jenkins untuk deployment otomatis dan juga pisahkan aplikasi menjadi microservices agar meningkatkan skalabilitas.
+3. Gunakan Blue/Green deployment, karena menurutku lebih baik memastikan update nya berjalan sebelum jalan di live server.
+4. Cek log pada service yang terjadi, kemudian lakukan hotfix jika itu sangat diperlukan.
+5. a. Database clustering : Baik digunakan untuk meningkatkan ketersediaan dan skalabilitas database, untuk mengatasi penggunaan database yang melonjak.
+   b. Database clustering sangat baik apabila penggunaan banyak memanggil data di database, karena ada tools Replicas.
+6. Iya aku siap membantu tim redaksi bila terjadi error dalam aplikasi CMS, jika saya mendapatkan sesuatu yang bisa di infokan ke tim developer, maka akan saya infokan agar segera di tangani
+
+    
